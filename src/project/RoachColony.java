@@ -4,6 +4,7 @@ public class RoachColony {
 	private String name;
 	private int population;
 	private double growthRate;
+	private Room room; //Class must be made by Factory design pattern, and include CheckIn time? 
 	
 	public RoachColony()
 	{
@@ -34,14 +35,36 @@ public class RoachColony {
 		return growthRate;
 	}
 	
-	public void setPopulation(int p)
+	public void checkIn()
 	{
-		population = p;
+		//room = 
+	}
+	
+	public double checkOut()
+	{
+		long currentTime = System.currentTimeMillis();
+		double totalCharge = room.getRate() * (room.getCheckInTime - currentTime);
+		
+		return totalCharge;
+	}
+	
+	public void throwParty()
+	{
+		population = (int) (population * growthRate);
+		
+		if(room instanceof SprayResistantShower)
+		{
+			population = (int) (population * .25);
+		}
+		else
+		{
+			population = (int) (population * .50);
+		}
 	}
 	
 	public String toString()
 	{
-		return "Roach Colony Name: " + name + " population: " + population + " growth rate: " + growthRate;
+		return "Roach Colony name: " + name + " population: " + population + " growth rate: " + growthRate;
 	}
 
 
