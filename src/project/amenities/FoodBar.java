@@ -9,10 +9,8 @@ public class FoodBar extends Amenity {
      */
     public static final double COST = 10;
 
-    private MotelRoom room;
-
     public FoodBar(MotelRoom room) {
-        this.room = room;
+        super(room);
     }
 
     /**

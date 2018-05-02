@@ -9,10 +9,8 @@ public class Shower extends Amenity {
      */
     public static final double COST = 25;
 
-    private MotelRoom room;
-
     public Shower(MotelRoom room) {
-        this.room = room;
+        super(room);
     }
 
     /**

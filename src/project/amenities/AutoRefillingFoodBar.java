@@ -9,10 +9,8 @@ public class AutoRefillingFoodBar extends Amenity {
      */
     public static final double COST = 15;
 
-    private MotelRoom room;
-
     public AutoRefillingFoodBar(MotelRoom room) {
-        this.room = room;
+        super(room);
     }
 
     /**
