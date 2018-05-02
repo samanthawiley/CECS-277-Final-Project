@@ -14,7 +14,8 @@ public class FoodBar extends RoomAmenities {
 
     /** return description of room with food bar
      */
-    public String getDescription() {
+    @Override
+    public String toString() {
         return roomType.getDescription() + " with a food bar";
     }
 

@@ -14,7 +14,8 @@ public class Spa extends RoomAmenities {
 
     /** return description of room with a spa
      */
-    public String getDescription() {
+    @Override
+    public String toString() {
         return roomType.getDescription() + " with a spa";
     }
 

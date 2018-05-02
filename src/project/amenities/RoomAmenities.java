@@ -1,7 +1,8 @@
+package project.amenities;
+
 public abstract class RoomAmenities extends MotelRoom{
     /**return description of Motel Room*/
     public abstract String getDescription();
-package project.amenities;
 
     /**Room held by the Amenity*/
     protected MotelRoom roomType;
@@ -9,4 +10,6 @@ package project.amenities;
     public RoachColony getGuest() {
         return roomType.getGuest();
     }
+
+    public abstract double cost();
 }
