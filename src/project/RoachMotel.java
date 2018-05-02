@@ -74,7 +74,8 @@ public class RoachMotel {
 		waitingList.add(r);
 	}
 	
-	public void String toString()
+	@Override
+	public String toString()
 	{
 		return "This is a Roach Motel with a capacity of " + capacity;
 	}
