@@ -1,3 +1,7 @@
+package project.amenities;
+
+import project.room.MotelRoom;
+
 public class AmenitiesFactory {
     private AmenitiesFactory() {}
 

@@ -1,5 +1,7 @@
 package project;
 
+import project.amenities.*;
+
 public class RoachColony {
 	private String name;
 	private int population;

@@ -1,3 +1,7 @@
+package project.amenities;
+
+import project.room.MotelRoom;
+
 public class Spa extends RoomAmenities {
     /**cost of a spa*/
     public static final double COST = 20;

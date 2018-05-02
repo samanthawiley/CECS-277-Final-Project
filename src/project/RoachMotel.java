@@ -1,6 +1,7 @@
 package project;
 
 import java.util.ArrayList;
+import project.amenities.*;
 
 public class RoachMotel {
 	private static RoachMotel uniqueInstance;

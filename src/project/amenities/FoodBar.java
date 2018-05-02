@@ -1,3 +1,7 @@
+package project.amenities;
+
+import project.room.MotelRoom;
+
 public class FoodBar extends RoomAmenities {
     /**cost of a food bar*/
     public static final double COST = 10;
