@@ -1,12 +1,12 @@
 package project.amenities;
 
-import project.room.MotelRoom;
+import project.room.Room;
 
-public abstract class Amenity extends MotelRoom {
+public abstract class Amenity extends Room {
 
-    protected MotelRoom room;
+    protected Room room;
 
-    public Amenity(MotelRoom room) {
+    public Amenity(Room room) {
         this.room = room;
     }
 

@@ -1,12 +1,13 @@
 package project;
 
 import project.amenities.*;
+import project.room.*;
 
 public class RoachColony {
 	private String name;
 	private int population;
 	private double growthRate;
-	private Room room; //Class must be made by Factory design pattern, and include CheckIn time? 
+	private Room room; //Class must be made by Factory design pattern, and include CheckIn time?
 	
 	public RoachColony()
 	{

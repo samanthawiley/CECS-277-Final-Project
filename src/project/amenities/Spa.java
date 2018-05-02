@@ -1,6 +1,6 @@
 package project.amenities;
 
-import project.room.MotelRoom;
+import project.room.Room;
 
 public class Spa extends Amenity {
 
@@ -9,7 +9,7 @@ public class Spa extends Amenity {
      */
     public static final double COST = 20;
 
-    public Spa(MotelRoom room) {
+    public Spa(Room room) {
         super(room);
     }
 

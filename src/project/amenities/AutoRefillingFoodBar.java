@@ -1,6 +1,6 @@
 package project.amenities;
 
-import project.room.MotelRoom;
+import project.room.Room;
 
 public class AutoRefillingFoodBar extends Amenity {
 
@@ -9,7 +9,7 @@ public class AutoRefillingFoodBar extends Amenity {
      */
     public static final double COST = 15;
 
-    public AutoRefillingFoodBar(MotelRoom room) {
+    public AutoRefillingFoodBar(Room room) {
         super(room);
     }
 

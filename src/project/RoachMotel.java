@@ -2,6 +2,7 @@ package project;
 
 import java.util.ArrayList;
 import project.amenities.*;
+import project.room.*;
 
 public class RoachMotel {
 	private static RoachMotel uniqueInstance;
