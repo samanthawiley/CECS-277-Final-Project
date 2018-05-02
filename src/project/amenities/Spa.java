@@ -2,26 +2,32 @@ package project.amenities;
 
 import project.room.MotelRoom;
 
-public class Spa extends RoomAmenities {
-    /**cost of a spa*/
+public class Spa extends Amenity {
+
+    /**
+     * cost of a spa
+     */
     public static final double COST = 20;
 
-    /**add a spa to a room
-     */
-    public Spa(MotelRoom roomType) {
-        this.roomType = roomType;
+    private MotelRoom room;
+
+    public Spa(MotelRoom room) {
+        this.room = room;
     }
 
-    /** return description of room with a spa
+    /**
+     * return description of room with a spa
      */
     @Override
     public String toString() {
-        return roomType.getDescription() + " with a spa";
+        return room.toString() + " with a spa";
     }
 
-    /** return cost of room with a spa
+    /**
+     * return cost of room with a spa
      */
+    @Override
     public double cost() {
-        return roomType.cost() + COST;
+        return room.cost() + COST;
     }
 }
