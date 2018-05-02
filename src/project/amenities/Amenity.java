@@ -12,4 +12,8 @@ public abstract class Amenity extends MotelRoom {
 
     public abstract double cost();
 
+    @Override
+    public String getRoomNumber() {
+        return room.getRoomNumber();
+    }
 }
