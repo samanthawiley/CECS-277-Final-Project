@@ -55,7 +55,7 @@ public class RoachColony {
 	{
 		population = (int) (population * growthRate);
 		
-		if(room instanceof SprayResistantShower)
+		if(room instanceof Shower)
 		{
 			population = (int) (population * .25);
 		}
