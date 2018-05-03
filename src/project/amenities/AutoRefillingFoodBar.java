@@ -25,7 +25,7 @@ public class AutoRefillingFoodBar extends Amenity {
      * return cost of room with an autorefilling food bar
      */
     @Override
-    public double cost() {
-        return room.cost() + COST;
+    public double getRate() {
+        return room.getRate() + COST;
     }
 }

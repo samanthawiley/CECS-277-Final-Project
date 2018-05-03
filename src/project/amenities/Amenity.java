@@ -10,7 +10,7 @@ public abstract class Amenity extends Room {
         this.room = room;
     }
 
-    public abstract double cost();
+    public abstract double getRate();
 
     @Override
     public String getRoomNumber() {

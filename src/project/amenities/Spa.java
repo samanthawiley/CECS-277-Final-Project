@@ -25,7 +25,7 @@ public class Spa extends Amenity {
      * return cost of room with a spa
      */
     @Override
-    public double cost() {
-        return room.cost() + COST;
+    public double getRate() {
+        return room.getRate() + COST;
     }
 }

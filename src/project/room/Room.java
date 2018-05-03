@@ -22,7 +22,7 @@ public abstract class Room {
         return String.format("Room %s\t$%f per night\t", roomNumber, cost);
     }
 
-    public double cost() {
+    public double getRate() {
         return cost;
     }
 

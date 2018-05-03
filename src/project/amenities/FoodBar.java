@@ -25,7 +25,7 @@ public class FoodBar extends Amenity {
      * return cost of room with food bar
      */
     @Override
-    public double cost() {
-        return room.cost() + COST;
+    public double getRate() {
+        return room.getRate() + COST;
     }
 }

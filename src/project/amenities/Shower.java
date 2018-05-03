@@ -25,7 +25,7 @@ public class Shower extends Amenity {
      * return cost of room with spray resistant shower
      */
     @Override
-    public double cost() {
-        return room.cost() + COST;
+    public double getRate() {
+        return room.getRate() + COST;
     }
 }
