@@ -46,7 +46,7 @@ public class RoachColony {
 	public double checkOut()
 	{
 		long currentTime = System.currentTimeMillis();
-		double totalCharge = room.getRate() * (room.getCheckInTime - currentTime);
+		double totalCharge = room.getRate() * (room.getCheckInTime() - currentTime);
 		
 		return totalCharge;
 	}

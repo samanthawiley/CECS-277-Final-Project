@@ -4,6 +4,7 @@ public abstract class Room {
 
     private String roomNumber;
     double cost;
+    long checkInTime;
 
     /**
      * Default constructor. Allows decorators to be instantiated without a room number
@@ -28,5 +29,17 @@ public abstract class Room {
 
     public String getRoomNumber() {
         return roomNumber;
+    }
+
+    public void checkIn() {
+        checkInTime = System.currentTimeMillis();
+    }
+
+    /**
+     * Returns time (in milliseconds) checkIn() was last called
+     * @return
+     */
+    public long getCheckInTime() {
+        return checkInTime;
     }
 }
