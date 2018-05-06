@@ -1,20 +1,22 @@
 package project;
 
-import java.util.ArrayList;
+import java.util.ArrayList; 
 import project.amenities.*;
 import project.room.*;
 
-public class RoachMotel {
+public class RoachMotel implements Subject{
 	private static RoachMotel uniqueInstance;
 	private int capacity;
-	ArrayList <RoachColony> customers;
-	ArrayList <Observer> waitingList;
+	private boolean vacancySign = true;
+	private ArrayList <RoachColony> customers;
+	private ArrayList <Observer> waitingList;
+	
 	
 	private RoachMotel()
 	{
 		capacity = 20;
 		customers = new ArrayList<RoachColony>();
-		waitingList = new ArrayList<RoachColony>();
+		waitingList = new ArrayList<Observer>();
 	}
 	
 	public static RoachMotel getInstance()
@@ -32,6 +34,15 @@ public class RoachMotel {
 		return capacity;
 	}
 	
+	public String getVacancySign()
+	{
+		if(true)
+		{
+			return "Vacancy";
+		}
+		return "No Vacancy";
+	}
+	
 	public ArrayList <RoachColony> getCustomers()
 	{
 		return customers;
@@ -42,17 +53,20 @@ public class RoachMotel {
 		return waitingList;
 	}
 	
-	public void checkIn(RoachColony r)
+	public String checkIn(RoachColony r, String roomType)
 	{
 		if(capacity == 0)
 		{
-			addToWaitingList(r);
+			vacancySign = false; 
+			addToWaitingList((Observer) r);
+			return "Currently there are no vacancies. " + r.toString() + " has been added to waiting list.";
 		}
 		else
 		{
 			customers.add(r);
-			r.checkIn();
+			r.checkIn(roomType);
 			capacity --;
+			return r.toString() + " has been checked in.";
 		}
 		
 	}
@@ -65,21 +79,42 @@ public class RoachMotel {
 		{
 			totalCharge = r.checkOut();
 			customers.remove(r);
+			if(capacity == 0)
+			{
+				vacancySign = true;
+				notifyObservers();
+			}
 			capacity ++;
-			//notify waiting list
 		}
 		return totalCharge;
 	}
-	
-	public void addToWaitingList(RoachColony r)
-	{
-		waitingList.add(r);
+
+	@Override
+	public void addToWaitingList(Observer o) {
+		waitingList.add(o);
+	}
+
+	@Override
+	public void removeFromWaitingList(Observer o) {
+		if(waitingList.contains(o))
+		{
+			waitingList.remove(o);
+		}
+	}
+
+	@Override
+	public void notifyObservers() {
+		for(int i=0; i < waitingList.size(); i++)
+		{
+			waitingList.get(i).update(vacancySign);
+		}
+		waitingList.clear();
 	}
 	
 	@Override
 	public String toString()
 	{
-		return "This is a Roach Motel with a capacity of " + capacity;
+		return "This is a Roach Motel with a current capacity of " + capacity + " " + getVacancySign();
 	}
 	
 
